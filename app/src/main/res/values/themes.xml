@@ -1,9 +1,18 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.CampusManager" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Base.Theme.CampusManager" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="colorPrimary">@color/greenDarker</item>
+        <item name="colorPrimaryVariant">@color/darkGreen</item>
+        <item name="android:statusBarColor">@color/darkGreen</item>
+        <item name="colorOnPrimary">@color/white</item>
     </style>
 
     <style name="Theme.CampusManager" parent="Base.Theme.CampusManager" />
+
+    <style name="customTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundMode">outline</item>
+        <item name="boxStrokeColor">@color/greenDarker</item>
+        <item name="hintTextColor">@color/greenDarker</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Material3.SmallComponent</item>
+    </style>
 </resources>

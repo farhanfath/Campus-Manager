@@ -8,6 +8,35 @@
     android:layout_height="match_parent"
     tools:context=".view.home.data.CrudDataActivity">
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/greenDarker"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:src="@drawable/ic_back"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="32dp"
+            android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Judul Halaman"
+            android:textSize="20sp"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
     <LinearLayout
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -18,14 +47,13 @@
         android:paddingBottom="64dp">
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/customTextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
             android:layout_marginTop="10dp"
             android:hint="@string/numberHint"
             app:startIconDrawable="@drawable/ic_npm"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/alumniAddTitle">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -38,14 +66,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/customTextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
             android:layout_marginTop="10dp"
             android:hint="@string/nameHint"
             app:startIconDrawable="@drawable/ic_username"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/alumniAddTitle">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -58,14 +85,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/customTextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
             android:layout_marginTop="10dp"
             android:hint="@string/dateHint"
             app:startIconDrawable="@drawable/ic_birthdate"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/alumniAddTitle">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -73,19 +99,20 @@
                 android:inputType="text"
                 android:paddingStart="50dp"
                 android:paddingEnd="0dp"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/customTextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
             android:layout_marginTop="10dp"
             android:hint="@string/genderHint"
             app:startIconDrawable="@drawable/ic_gender"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/alumniAddTitle">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -98,14 +125,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/customTextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
             android:layout_marginTop="10dp"
             android:hint="@string/addressHint"
             app:startIconDrawable="@drawable/ic_address"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/alumniAddTitle">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -131,5 +157,12 @@
         android:drawableLeft="@drawable/ic_save"
         android:text="@string/saveText"
         tools:ignore="RtlHardcoded" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_centerInParent="true"/>
 
 </RelativeLayout>

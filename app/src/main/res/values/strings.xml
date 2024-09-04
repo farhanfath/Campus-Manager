@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CampusManager</string>
+    <string name="app_name">Campus Manager</string>
     <string name="seeText">Lihat Data</string>
     <string name="insertText">Input Data</string>
     <string name="infoText">Informasi</string>
@@ -9,4 +9,9 @@
     <string name="genderHint">Jenis Kelamin</string>
     <string name="addressHint">Alamat</string>
     <string name="saveText">Simpan</string>
+    <string name="nameAlumni">Nama :</string>
+    <string name="noDataText">Belum ada Data Mahasiswa</string>
+    <string name="inputTitle">Input Data</string>
+    <string name="updateTitle">Update Data</string>
+    <string name="descApp">Campus Manager adalah sebuah aplikasi yang dirancang untuk membantu manajemen data mahasiswa di lingkungan kampus atau universitas. Aplikasi ini memungkinkan pengguna untuk melakukan operasi CRUD pada data mahasiswa, sehingga mempermudah proses administrasi dan pengelolaan informasi akademik.</string>
 </resources>

@@ -10,8 +10,8 @@ import kotlinx.coroutines.launch
 
 class MainViewModel (private val repository: DataRepository) : ViewModel() {
 
-    private val _alumniList = MutableLiveData<List<Student>>()
-    val alumniList: LiveData<List<Student>> get() = _alumniList
+    private val _studentList = MutableLiveData<List<Student>>()
+    val studentList: LiveData<List<Student>> get() = _studentList
 
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> get() = _isLoading
@@ -21,20 +21,20 @@ class MainViewModel (private val repository: DataRepository) : ViewModel() {
 
     fun loadAllStudent() {
         viewModelScope.launch {
-            val alumni = repository.getAllStudent()
-            _alumniList.postValue(alumni)
+            val student = repository.getAllStudent()
+            _studentList.postValue(student)
         }
     }
 
-    fun addStudent(alumni: Student) {
+    fun addStudent(student: Student) {
         viewModelScope.launch {
             _isLoading.postValue(true)
             try {
-                val existStudent = repository.checkStudent(alumni.number)
+                val existStudent = repository.checkStudent(student.number)
                 if (existStudent != null) {
                     _addStudentStatus.postValue(Result.success(false))
                 } else {
-                    repository.insertStudent(alumni)
+                    repository.insertStudent(student)
                     _addStudentStatus.postValue(Result.success(true))
                 }
             } catch (e: Exception) {
@@ -45,16 +45,16 @@ class MainViewModel (private val repository: DataRepository) : ViewModel() {
         }
     }
 
-    fun removeStudent(alumni: Student) {
+    fun removeStudent(student: Student) {
         viewModelScope.launch {
-            repository.deleteStudent(alumni)
+            repository.deleteStudent(student)
             loadAllStudent()
         }
     }
 
-    fun updateStudent(alumni: Student) {
+    fun updateStudent(student: Student) {
         viewModelScope.launch {
-            repository.updateStudent(alumni)
+            repository.updateStudent(student)
             loadAllStudent()
         }
     }

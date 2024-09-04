@@ -13,25 +13,25 @@
         android:theme="@style/Theme.CampusManager"
         tools:targetApi="31">
         <activity
+            android:name=".view.home.InfoActivity"
+            android:parentActivityName=".view.home.HomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.home.data.DetailDataActivity"
+            android:parentActivityName=".view.home.data.DataActivity"
             android:exported="false" />
         <activity
             android:name=".view.home.data.CrudDataActivity"
             android:exported="false" />
         <activity
             android:name=".view.home.data.DataActivity"
+            android:parentActivityName=".view.home.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".view.home.HomeActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

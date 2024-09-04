@@ -7,4 +7,9 @@
     <color name="blue">#78B7D0</color>
     <color name="yellow">#D8A25E</color>
     <color name="green">#2FAA4B</color>
+
+    <color name="greenDarker">#6A9C89</color>
+    <color name="darkGreen">#16423C</color>
+
+    <color name="cardColor">#FFF5E0</color>
 </resources>

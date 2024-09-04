@@ -1,120 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:background="@color/bgColor"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".view.home.data.DataActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/item_student" />
+
+    <Button
+        android:id="@+id/addDataBtn"
+        style="@style/Widget.MaterialComponents.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/ic_student" />
+        android:layout_margin="32dp"
+        android:backgroundTint="@color/blue"
+        android:drawableLeft="@drawable/ic_plus"
+        android:text="@string/insertText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="RtlHardcoded" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/emptyFrame"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="10dp"
-        android:hint="@string/numberHint"
-        app:startIconDrawable="@drawable/ic_npm"
+        android:elevation="18dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/alumniAddTitle">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/numberEt"
-            android:inputType="text"
-            android:paddingStart="50dp"
-            android:paddingEnd="0dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </com.google.android.material.textfield.TextInputLayout>
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_empty" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="10dp"
-        android:hint="@string/nameHint"
-        app:startIconDrawable="@drawable/ic_username"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/alumniAddTitle">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="@string/noDataText"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/usernameEt"
-            android:inputType="text"
-            android:paddingStart="50dp"
-            android:paddingEnd="0dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="10dp"
-        android:hint="@string/dateHint"
-        app:startIconDrawable="@drawable/ic_birthdate"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/alumniAddTitle">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/birthDateEt"
-            android:inputType="text"
-            android:paddingStart="50dp"
-            android:paddingEnd="0dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="10dp"
-        android:hint="@string/genderHint"
-        app:startIconDrawable="@drawable/ic_gender"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/alumniAddTitle">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/genderEt"
-            android:inputType="text"
-            android:paddingStart="50dp"
-            android:paddingEnd="0dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="10dp"
-        android:hint="@string/addressHint"
-        app:startIconDrawable="@drawable/ic_address"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/alumniAddTitle">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/addressEt"
-            android:inputType="text"
-            android:paddingStart="50dp"
-            android:paddingEnd="0dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

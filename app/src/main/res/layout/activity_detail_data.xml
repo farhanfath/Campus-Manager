@@ -18,10 +18,12 @@
         android:src="@drawable/ic_student" />
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/customTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
         android:layout_marginTop="10dp"
+        android:clickable="false"
         android:hint="@string/numberHint"
         app:startIconDrawable="@drawable/ic_npm"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,6 +33,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/numberEt"
             android:inputType="text"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:clickable="false"
             android:paddingStart="50dp"
             android:paddingEnd="0dp"
             android:layout_width="match_parent"
@@ -38,10 +43,12 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/customTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
         android:layout_marginTop="10dp"
+        android:clickable="false"
         android:hint="@string/nameHint"
         app:startIconDrawable="@drawable/ic_username"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,6 +58,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/usernameEt"
             android:inputType="text"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:clickable="false"
             android:paddingStart="50dp"
             android:paddingEnd="0dp"
             android:layout_width="match_parent"
@@ -58,10 +68,12 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/customTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
         android:layout_marginTop="10dp"
+        android:clickable="false"
         android:hint="@string/dateHint"
         app:startIconDrawable="@drawable/ic_birthdate"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,6 +83,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/birthDateEt"
             android:inputType="text"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:clickable="false"
             android:paddingStart="50dp"
             android:paddingEnd="0dp"
             android:layout_width="match_parent"
@@ -78,10 +93,12 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/customTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
         android:layout_marginTop="10dp"
+        android:clickable="false"
         android:hint="@string/genderHint"
         app:startIconDrawable="@drawable/ic_gender"
         app:layout_constraintEnd_toEndOf="parent"
@@ -91,6 +108,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/genderEt"
             android:inputType="text"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:clickable="false"
             android:paddingStart="50dp"
             android:paddingEnd="0dp"
             android:layout_width="match_parent"
@@ -98,10 +118,12 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/customTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
         android:layout_marginTop="10dp"
+        android:clickable="false"
         android:hint="@string/addressHint"
         app:startIconDrawable="@drawable/ic_address"
         app:layout_constraintEnd_toEndOf="parent"
@@ -111,6 +133,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/addressEt"
             android:inputType="text"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:clickable="false"
             android:paddingStart="50dp"
             android:paddingEnd="0dp"
             android:layout_width="match_parent"
