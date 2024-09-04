@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,23 +15,29 @@
         android:theme="@style/Theme.CampusManager"
         tools:targetApi="31">
         <activity
-            android:name=".view.home.InfoActivity"
-            android:parentActivityName=".view.home.HomeActivity"
+            android:name=".view.auth.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".view.home.data.DetailDataActivity"
-            android:parentActivityName=".view.home.data.DataActivity"
+            android:name=".view.auth.LoginActivity"
             android:exported="false" />
+        <activity
+            android:name=".view.home.InfoActivity"
+            android:exported="false"
+            android:parentActivityName=".view.home.HomeActivity" />
+        <activity
+            android:name=".view.home.data.DetailDataActivity"
+            android:exported="false"
+            android:parentActivityName=".view.home.data.DataActivity" />
         <activity
             android:name=".view.home.data.CrudDataActivity"
             android:exported="false" />
         <activity
             android:name=".view.home.data.DataActivity"
-            android:parentActivityName=".view.home.HomeActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".view.home.HomeActivity" />
         <activity
             android:name=".view.home.HomeActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".SplashActivity"
             android:exported="true">

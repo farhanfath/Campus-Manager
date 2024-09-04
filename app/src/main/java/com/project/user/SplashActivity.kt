@@ -7,6 +7,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.project.user.utils.Utility
+import com.project.user.view.auth.LoginActivity
 import com.project.user.view.home.HomeActivity
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
@@ -24,11 +26,19 @@ class SplashActivity : AppCompatActivity() {
             insets
         }
         supportActionBar?.hide()
-
         MainScope().launch {
             delay(5000)
-            startActivity(Intent(this@SplashActivity, HomeActivity::class.java))
-            finish()
+            navigateToNextScreen()
         }
+    }
+
+    private fun navigateToNextScreen() {
+        val nextActivity = if (Utility.auth.currentUser != null) {
+            HomeActivity::class.java
+        } else {
+            LoginActivity::class.java
+        }
+        startActivity(Intent(this@SplashActivity, nextActivity))
+        finish()
     }
 }

@@ -53,7 +53,18 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/yellow"
             android:drawableLeft="@drawable/ic_info"
+            android:layout_marginBottom="8dp"
             android:text="@string/infoText"
+            tools:ignore="RtlHardcoded" />
+
+        <Button
+            android:id="@+id/logoutBtn"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:drawableLeft="@drawable/ic_logout"
+            android:text="@string/logoutText"
             tools:ignore="RtlHardcoded" />
 
     </LinearLayout>

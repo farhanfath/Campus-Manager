@@ -19,6 +19,7 @@ class MainViewModel (private val repository: DataRepository) : ViewModel() {
     private val _addStudentStatus = MutableLiveData<Result<Boolean>>()
     val addStudentStatus: LiveData<Result<Boolean>> get() = _addStudentStatus
 
+    //crud with room database
     fun loadAllStudent() {
         viewModelScope.launch {
             val student = repository.getAllStudent()

@@ -12,4 +12,5 @@
     <color name="darkGreen">#16423C</color>
 
     <color name="cardColor">#FFF5E0</color>
+    <color name="loading_bg">#4D635E54</color>
 </resources>

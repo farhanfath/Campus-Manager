@@ -1,9 +1,12 @@
 package com.project.user.view.home
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.project.user.databinding.ActivityHomeBinding
+import com.project.user.utils.Utility
+import com.project.user.view.auth.LoginActivity
 import com.project.user.view.home.data.CrudDataActivity
 import com.project.user.view.home.data.DataActivity
 
@@ -29,6 +32,29 @@ class HomeActivity : AppCompatActivity() {
             seeDataBtn.setOnClickListener {
                 startActivity(Intent(this@HomeActivity, DataActivity::class.java))
             }
+            logoutBtn.setOnClickListener {
+                showLogoutConfirmationDialog()
+            }
         }
+    }
+
+    private fun showLogoutConfirmationDialog() {
+        AlertDialog.Builder(this)
+            .setTitle("Konfirmasi Logout")
+            .setMessage("Apakah Anda yakin ingin logout?")
+            .setPositiveButton("Ya") { dialog, _ ->
+                dialog.dismiss()
+                logoutHandler()
+            }
+            .setNegativeButton("Tidak") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
+    }
+
+    private fun logoutHandler() {
+        Utility.logout()
+        startActivity(Intent(this, LoginActivity::class.java))
+        finish()
     }
 }
