@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.project.user.data.database.Student
+import com.project.user.databinding.DialogOptionsBinding
 import com.project.user.databinding.ItemStudentBinding
 import com.project.user.utils.viewmodel.MainViewModel
 import com.project.user.view.home.data.CrudDataActivity
@@ -23,39 +25,40 @@ class StudentAdapter(
             binding.alumniName.text = student.name
 
             binding.root.setOnClickListener {
-                showOptionsDialog(student)
+                showOptionsBottomDialog(student)
             }
         }
 
-        private fun showOptionsDialog(student: Student) {
-            val options = arrayOf("Lihat Data", "Edit Data", "Hapus Data")
+        private fun showOptionsBottomDialog(student: Student) {
             val context = binding.root.context
+            val bottomSheetDialog = BottomSheetDialog(context)
 
-            AlertDialog.Builder(context).apply {
-                setTitle("Pilihan")
-                setItems(options) { dialog, which ->
-                    when (which) {
-                        0 -> {
-                            val intent = Intent(context, DetailDataActivity::class.java).apply {
-                                putExtra("student", student)
-                            }
-                            context.startActivity(intent)
-                        }
-                        1 -> {
-                            val intent = Intent(context, CrudDataActivity::class.java).apply {
-                                putExtra("student", student)
-                                putExtra("type", CrudDataActivity.TYPE_EDIT)
-                            }
-                            context.startActivity(intent)
-                        }
-                        2 -> {
-                            showDeleteConfirmationDialog(student)
-                        }
-                    }
+            val bottomSheetBinding = DialogOptionsBinding.inflate(LayoutInflater.from(context))
+            bottomSheetDialog.setContentView(bottomSheetBinding.root)
+
+            bottomSheetBinding.layoutSee.setOnClickListener {
+                val intent = Intent(context, DetailDataActivity::class.java).apply {
+                    putExtra("student", student)
                 }
-                setNegativeButton("Batal", null)
-                show()
+                context.startActivity(intent)
+                bottomSheetDialog.dismiss()
             }
+
+            bottomSheetBinding.layoutEdit.setOnClickListener {
+                val intent = Intent(context, CrudDataActivity::class.java).apply {
+                    putExtra("student", student)
+                    putExtra("type", CrudDataActivity.TYPE_EDIT)
+                }
+                context.startActivity(intent)
+                bottomSheetDialog.dismiss()
+            }
+
+            bottomSheetBinding.layoutDelete.setOnClickListener {
+                showDeleteConfirmationDialog(student)
+                bottomSheetDialog.dismiss()
+            }
+
+            bottomSheetDialog.show()
         }
 
         private fun showDeleteConfirmationDialog(student: Student) {

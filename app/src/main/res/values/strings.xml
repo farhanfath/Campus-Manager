@@ -21,4 +21,7 @@
     <string name="registerText">Daftar</string>
     <string name="haveAccount">Sudah Punya Akun?</string>
     <string name="logoutText">Log Out</string>
+    <string name="customizeText">Kustomisasi Data</string>
+    <string name="deleteText">Hapus Data</string>
+    <string name="updateText">Edit Data</string>
 </resources>
