@@ -2,6 +2,9 @@
 
 Campus Manager adalah aplikasi Android yang dirancang untuk memudahkan pengelolaan data mahasiswa di kampus. Aplikasi ini menyediakan fitur autentikasi pengguna dan pendataan mahasiswa dengan menggunakan Firebase sebagai backend.
 
+## Demo Aplikasi
+[Campus Manager App Demo Link](https://drive.google.com/file/d/16jDVMyTDjmdHZHtmc_jcfs58sL5969BH/view?usp=sharing)
+
 ## Fitur
 
 ### 1. Autentikasi Pengguna
